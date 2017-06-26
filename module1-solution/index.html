@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+      .green { color: lightgreen }
+      .red { color: red }
+      .green_border{ border: lightgreen 1px solid }
+      .red_border{ border: red 1px solid }
     </style>
   </head>
 <body>
@@ -15,14 +19,15 @@
          <div class="form-group">
              <input ng-model="dishesList" id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control">
+             class="form-control" ng-class="borderStyle">
+             <span>An EMPTY item is IGNORED.</span>
          </div>
          <div class="form-group">
              <button ng-click="checkLunch()" class="btn btn-default">Check If Too Much</button>
          </div>
          <div class="form-group message">
            <!-- Your message can go here. -->
-           {{msg}}
+           <span ng-class="fontColor">{{msg}}</span>
          </div>
    </div>
 <script src="https://cdn.bootcss.com/angular.js/1.6.4/angular.min.js"></script>
